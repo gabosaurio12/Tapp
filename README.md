@@ -16,7 +16,7 @@ This app allows the user to improve the organization of his daily tasks, allowin
 
 - Python
 - GUI powered by QT
-- PostgreSQL connections with PySQL
+- PostgreSQL connections with psycopg2
 
 ---
 
