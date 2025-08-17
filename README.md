@@ -28,6 +28,12 @@ Not ready for installation yet.
 
 ## How to run (WIP)
 
+You have to restore the data base with the next line:
+
+```
+pg_restore -U your_user -d database_name -v "Construction/TaskManager/database/task_manager_db.dump"
+```
+
 This project can be run from VS Code using the Main class in:
 
 ```
