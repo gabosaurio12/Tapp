@@ -40,7 +40,7 @@ cd Construction/TaskManager/src/
 ```
 
 ```
-pyinstaller --onefile --windowed --icon=MyIcon.icns --add-data "resources:resources" main.py
+pyinstaller --name "Tapp" --onefile --windowed --icon=MyIcon.icns --add-data "resources:resources" main.py
 ```
 
 ## Requirements
