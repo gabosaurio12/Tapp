@@ -16,7 +16,7 @@ class ProfileDAOImplementation(ProfileDAO):
     def insert_profile(self, profile):
         query = """
         INSERT INTO profile (username, password, name)
-        SELECT username, password, name
+        SELECT username, encode(digest(password, 'sha256'), 'hex'), name
         FROM json_populate_record(NULL::profile, %s::json)
         RETURNING id_profile;
         """
@@ -81,8 +81,9 @@ class ProfileDAOImplementation(ProfileDAO):
         return profiles
     
     def update_profile_by_username(self, profile):
-        query = """UPDATE profile SET username = %s, password = %s, name = %s 
-        "WHERE username = %s;"""
+        query = """UPDATE profile SET username = %s,
+        password = encode(digest(%s, 'sha256'), 'hex'), name = %s 
+        WHERE username = %s;"""
 
         affected_rows = 0
         with DBConnection.get_connection() as connection:
