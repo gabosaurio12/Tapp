@@ -35,6 +35,9 @@ TaskManager/Construction/TaskManager/src/main.py
 ```
 
 Or using PyInstaller
+```
+cd Construction/TaskManager/src/
+```
 
 ```
 pyinstaller --onefile --windowed --icon=MyIcon.icns --add-data "resources:resources" main.py
