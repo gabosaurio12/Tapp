@@ -125,3 +125,15 @@ class ProfileDAOImplementation(ProfileDAO):
                     id = row[0]
 
         return id
+    
+    def get_hashed_password(self, password):
+        query = "SELECT encode(digest(%s, 'sha256'), 'hex')"
+        
+        with DBConnection.get_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute(query, (password,))
+                row = cursor.fetchone()
+                if row is not None:
+                    hashed_password = row[0]
+
+        return hashed_password

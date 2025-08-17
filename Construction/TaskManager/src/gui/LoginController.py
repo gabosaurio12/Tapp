@@ -21,7 +21,8 @@ class LoginController(QMainWindow):
         dao = ProfileDAOImplementation()
         profile = dao.read_profile_by_username(username)
         if profile.username == username:
-            if password == profile.password:
+            hash_password = dao.get_hashed_password(password);
+            if hash_password == profile.password:
                 if (self.ui.remember_check.isChecked()):
                     self.save_current_profile(profile)
                 self.main_window = MainPageController(profile)
