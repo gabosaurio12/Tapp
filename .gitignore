@@ -6,5 +6,5 @@
 
 # PyIntaller
 *.spec
-/dist/
-/build/
+dist/
+build/
