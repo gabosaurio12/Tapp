@@ -1,6 +1,7 @@
 # Tasks Managment App
 
-This app allows the user to improve the organization of his daily tasks, allowing him to have multiple users, choose the priority, phase and give a description of each task.
+This app helps users organize their daily tasks more effectively. It supports multiple user profiles, choose the task priority, phase and give a detailed description to each task.
+Please note: The app is still under development. Some features are pending, and full testing has not yet been completed.
 
 ---
 
@@ -21,12 +22,6 @@ This app allows the user to improve the organization of his daily tasks, allowin
 ---
 
 ## Installation
-
-Not ready for installation yet.
-
----
-
-## How to run (WIP)
 
 Run the run.sh file:
 
