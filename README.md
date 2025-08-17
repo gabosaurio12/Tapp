@@ -28,26 +28,12 @@ Not ready for installation yet.
 
 ## How to run (WIP)
 
-You have to restore the data base with the next line:
+Run the run.sh file:
 
 ```
-pg_restore -U your_user -d database_name -v "Construction/TaskManager/database/task_manager_db.dump"
+./run.sh
 ```
-
-This project can be run from VS Code using the Main class in:
-
-```
-TaskManager/Construction/TaskManager/src/main.py
-```
-
-Or using PyInstaller
-```
-cd Construction/TaskManager/src/
-```
-
-```
-pyinstaller --name "Tapp" --onefile --windowed --icon=MyIcon.icns --add-data "resources:resources" main.py
-```
+After that you shall find the app in launchpad
 
 ## Requirements
 - Python 3.12+
