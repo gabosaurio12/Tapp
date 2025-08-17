@@ -5,6 +5,22 @@ Please note: The app is still under development. Some features are pending, and 
 
 ---
 
+## Screenshots
+
+### Login
+![Login](Screenshots/Login.png)
+
+### Sign up
+![Signup](Screenshots/signup.png)
+
+### Main page
+![Main](Screenshots/main.png)
+
+### Adding a task
+![Add Task](Screenshots/task.png)
+
+---
+
 ## Features
 
 - Multi account
