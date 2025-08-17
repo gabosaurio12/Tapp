@@ -1,3 +1,64 @@
+# Tasks Managment App
+
+This app allows the user to improve the organization of his daily tasks, allowing him to have multiple users, choose the priority, phase and give a description of each task.
+
+---
+
+## Features
+
+- Multi account
+- Long descriptions for tasks
+- Priority assignment
+
+---
+
+## Technologies
+
+- Python
+- GUI powered by QT
+- PostgreSQL connections with PySQL
+
+---
+
+## Installation
+
+Not ready for installation yet.
+
+---
+
+## How to run (WIP)
+
+This project can be run from VS Code using the Main class in:
+
+```
+TaskManager/Construction/TaskManager/src/main.py
+```
+
+Or using PyInstaller
+```
+cd Construction/TaskManager/src/
+```
+
+```
+pyinstaller --onefile --windowed --icon=MyIcon.icns --add-data "resources:resources" main.py
+```
+
+## Requirements
+- Python 3.12+
+- PySQL installed
+- Postgres running
+
+## Author
+
+Gabriel Antonio González López  
+[@gabosaurio12](https://github.com/gabosaurio12)
+
+---
+
+## License
+
+Licensed under the MIT License
+
 MIT License
 
 Copyright (c) 2025 Gabriel Antonio González López
