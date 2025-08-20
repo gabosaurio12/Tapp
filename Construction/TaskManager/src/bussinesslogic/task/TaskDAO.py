@@ -15,9 +15,17 @@ class TaskDAO(ABC):
         pass
 
     @abstractmethod
+    def read_json_tasks(self, id_shcedule):
+        pass
+
+    @abstractmethod
     def update_task(self):
         pass
 
     @abstractmethod
     def delete_task(self):
+        pass
+
+    @abstractmethod
+    def conclude_task(self, task):
         pass

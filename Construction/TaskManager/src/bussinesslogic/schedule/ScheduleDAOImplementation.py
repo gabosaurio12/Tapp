@@ -50,9 +50,6 @@ class ScheduleDAOImplementation(ScheduleDAO):
                     id_schedule = row[0]
                     
             return id_schedule
-        
-    def update_schedule_by_id(self, schedule_id):
-        pass
 
     def delete_schedule_by_id(self, schedule_id):
         pass

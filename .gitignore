@@ -4,7 +4,8 @@
 # VS Code
 .vscode
 
-# PyIntaller
+# Python
 *.spec
 dist/
 build/
+__pycache__/

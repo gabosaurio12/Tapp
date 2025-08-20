@@ -18,8 +18,8 @@ class DetailsWindowController(QMainWindow):
 
         self.set_info()
 
-        self.ui.start_check.clicked.connect(self.set_start_time)
-        self.ui.end_check.clicked.connect(self.set_end_time)
+        self.ui.start_check.clicked.connect(self.enable_start_time)
+        self.ui.end_check.clicked.connect(self.enable_end_time)
         self.ui.confirm_button.clicked.connect(self.update_task)
         self.ui.cancel_button.clicked.connect(self.close_window)
 
@@ -96,6 +96,22 @@ class DetailsWindowController(QMainWindow):
             check_box.setChecked(True)
             end_time.setEnabled(True)
             end_time.setDateTime(date_time)
+        else:
+            end_time.setEnabled(False)
+
+    def enable_start_time(self):
+        check_box = self.ui.start_check
+        start_time = self.ui.start_time_edit
+        if (check_box.isChecked()):
+            start_time.setEnabled(True)
+        else:
+            start_time.setEnabled(False)
+
+    def enable_end_time(self):
+        check_box = self.ui.end_check
+        end_time = self.ui.end_time_edit
+        if (check_box.isChecked()):
+            end_time.setEnabled(True)
         else:
             end_time.setEnabled(False)
 

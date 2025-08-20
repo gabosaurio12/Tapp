@@ -16,7 +16,8 @@ class MainPageController(QMainWindow):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
         self.model = QStandardItemModel()
-        self.model.setHorizontalHeaderLabels(["Tarea", "Prioridad", "Estado"])
+        headers = ["Tarea","Prioridad", "Estado", "Inicio", "Final"]
+        self.model.setHorizontalHeaderLabels(headers)
         self.ui.task_table.setModel(self.model)
         self.ui.task_table.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.ui.task_table.setSelectionMode(QAbstractItemView.SingleSelection)
@@ -36,7 +37,9 @@ class MainPageController(QMainWindow):
             row = [
                 QStandardItem(task.title),
                 QStandardItem(task.priority),
-                QStandardItem(task.status)
+                QStandardItem(task.status),
+                QStandardItem(task.start_date),
+                QStandardItem(task.end_date)
             ]
             self.model.appendRow(row)
 

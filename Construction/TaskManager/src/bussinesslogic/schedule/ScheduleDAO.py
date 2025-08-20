@@ -15,9 +15,5 @@ class ScheduleDAO(ABC):
         pass
 
     @abstractmethod
-    def update_schedule_by_id(self, schedule_id):
-        pass
-
-    @abstractmethod
     def delete_schedule_by_id(self, schedule_id):
         pass
