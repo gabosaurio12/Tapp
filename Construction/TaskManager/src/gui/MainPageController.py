@@ -16,7 +16,7 @@ class MainPageController(QMainWindow):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
         self.model = QStandardItemModel()
-        headers = ["Tarea","Prioridad", "Estado", "Inicio", "Final"]
+        headers = ["Tarea","Prioridad", "Estado", "Final"]
         self.model.setHorizontalHeaderLabels(headers)
         self.ui.task_table.setModel(self.model)
         self.ui.task_table.setSelectionBehavior(QAbstractItemView.SelectRows)
@@ -28,17 +28,44 @@ class MainPageController(QMainWindow):
         self.ui.done_button.clicked.connect(self.finish_task)
         self.ui.logout_button.clicked.connect(self.logout)
 
+    def order_tasks(self, tasks):
+        status_order = {
+            "Pendiente": 0,
+            "Iniciado": 1,
+            "En proceso": 2,
+            "": 3
+        }
+
+        priority_order = {
+            "Baja": 0,
+            "Media": 1,
+            "Alta": 2
+        }
+
+        tasks.sort(key = lambda t: (
+            -priority_order[t.priority],
+            t.end_date is None,
+            t.end_date,
+            status_order.get(
+                t.status if t.status else "", 0
+            )
+        ))
+
+        return tasks
+
     def load_tasks(self):
         dao = TaskDAOImplementation()
         schedule_dao = ScheduleDAOImplementation()
         id_schedule = schedule_dao.read_schedule_id_by_profile(self.profile)
         tasks: list[Task] = dao.read_json_tasks(id_schedule)
+
+        tasks = self.order_tasks(tasks)
+    
         for task in tasks:
             row = [
                 QStandardItem(task.title),
                 QStandardItem(task.priority),
                 QStandardItem(task.status),
-                QStandardItem(task.start_date),
                 QStandardItem(task.end_date)
             ]
             self.model.appendRow(row)
