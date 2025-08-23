@@ -77,9 +77,10 @@ class DetailsWindowController(QMainWindow):
             start_time.setDateTime(date_time)
         else:
             start_time.setEnabled(False)
+            check_box.setChecked(False)
 
     def set_end_time(self):
-        check_box = self.ui.start_check
+        check_box = self.ui.end_check
         end_time = self.ui.end_time_edit
         date_str = self.task.end_date
         time_str = self.task.end_time
@@ -98,6 +99,7 @@ class DetailsWindowController(QMainWindow):
             end_time.setDateTime(date_time)
         else:
             end_time.setEnabled(False)
+            check_box.setChecked(False)
 
     def enable_start_time(self):
         check_box = self.ui.start_check
